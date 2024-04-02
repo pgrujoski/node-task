@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table List</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <%- include("partials/nav") %>
+        <table border="1" width="100%">
+            <tr>
+                <th>Name</th>
+                <th>Manufacturer</th>
+                <th>Quantity</th>
+                <th>DaysLeftToUse</th>
+                <th>PlaceWhereAvailable</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+            <% data.forEach((product, i)=> { %>
+                <tr>
+                    <td>
+                        <%= product.name %>
+                    </td>
+                    <td>
+                        <%= product.manufacturer %>
+                    </td>
+                    <td>
+                        <%= product.quantity %>
+                    </td>
+                    <td>
+                        <%= product.daysLeftToUse %>
+                    </td>
+                    <td>
+                        <%= product.placeWhereAvailable %>
+                    </td>
+                    <td>
+                        <a href="/delete?index=<%= i%>">Delete</a>
+                    </td>
+                    <td>
+                        <a href="/update?index=<%= i%>">Edit</a>
+                    </td>
+                </tr>
+                <% }) %>
+
+        </table>
+
+        <%- include("partials/footer") %>
+</body>
+
+</html>

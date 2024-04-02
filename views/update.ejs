@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit list</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>Edit Product</h2>
+    <form action="/update" method="post">
+        <input type="hidden" name="index" value="<%= index %>">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= product.name %>"><br>
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" id="manufacturer" name="manufacturer" value="<%= product.manufacturer %>"><br>
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" name="quantity" value="<%= product.quantity %>"><br>
+        <label for="dayslefttouse">Days left to use:</label>
+        <input type="text" id="dayslefttouse" name="dayslefttouse" value="<%= product.daysLeftToUse %>"><br>
+        <label for="placewhereavailable">Place where available:</label>
+        <input type="text" id="placewhereavailable" name="placewhereavailable" value="<%= product.placeWhereAvailable %>"><br>
+        <button type="submit">Save Changes</button>
+    </form>
+    <%- include("partials/footer") %>
+</body>
+</html>
